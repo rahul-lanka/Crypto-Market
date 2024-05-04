@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Market</title>
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 0 20px;
+      }
+
+      #searchContainer {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      #searchInput {
+        width: 60%;
+        padding: 10px;
+        font-size: 16px;
+        background-color: black;
+        color: white;
+        border: 1px solid white;
+        margin-right: 1vw;
+      }
+
+      #searchButtons {
+        display: flex;
+        justify-content: space-between;
+        /* width: 30%; */
+        height: 6vh;
+        border: 1px solid white;
+
+      }
+
+      #searchButtons button {
+        padding: 2px 20px;
+        /* font-size: 16px; */
+        cursor: pointer;
+        background-color: black;
+        color: white;
+        margin-right: 1vw;
+
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 10px;
+        border-bottom: 1px solid #fff;
+        text-align: left;
+      }
+
+      th {
+        background-color: #333;
+      }
+
+      th,
+      td img {
+        max-width: 50px;
+        max-height: 50px;
+        vertical-align: middle;
+      }
+
+      td {
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="searchContainer">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search by name or symbol"
+        />
+        <div id="searchButtons">
+          <button onclick="sortData('marketPrice')">Sort by Mkt Price</button>
+          <button onclick="sortData('percentage')">Sort by Percentage</button>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>ID</th>
+            <th>Image</th>
+            <th>Symbol</th>
+            <th>Price</th>
+            <th>Volume</th>
+          </tr>
+        </thead>
+        <tbody id="cryptoTableBody">
+          <!-- Data will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
